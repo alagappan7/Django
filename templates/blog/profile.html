@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-blue.css">
+
+<style>
+    body {
+        text-align: left;
+    }
+    .flex-container {
+        display: flex;
+      }
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 70%;
+        height: 10%;
+        padding: 10px 10px 10px 10px;
+        
+      }
+      
+      .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      }
+</style>
+</head>
+<body>
+{% for users in proflis %}
+    <div class="col-md-12">
+        <div class="col-md-6">
+            <div class="card" style="background-color:lightblue">
+                <p>id:{{users.id}}</p>
+                <p>name:{{users.name}}</p>
+                <p>Department:{{users.Department}}</p>
+                <p>mailid:{{users.mailid}}</p>
+                <p>Writeuperrors:{{users.writeuperrors}}</p>
+                <p>Write up text:{{users.text}}</p>
+                <p>Fathername:{{users.Fathername}}</p>
+                <p>collegeid:{{users.collegeid}}</p>
+                <p>collegename:{{users.collegename}}</p>
+            </div>
+        </div>
+        <br><br>
+        <br><br>
+        <div class="col-md-3">
+            <div class="card" style="background-color: lightgreen">
+                {% for il in quest %}
+                     {{forloop.counter}}){{il}}
+                    
+                <br>
+                {%endfor%}
+                </div>
+            </div>    
+    <br>
+    <div class="col-md-3">
+        <div class="card" style="background-color: lightgreen ; padding-left:50px;">
+            {% for r in res %}
+            {{forloop.counter}}){{r}}  
+            <br>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+
+
+{% endfor %}      
+</body>
+</html>

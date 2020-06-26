@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registration</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: lightblue;
+      }
+      
+
+      /* Add padding to containers */
+      .container {
+        padding: 16px;
+        background-color: white;
+      }
+      
+      /* Full-width input fields */
+      input[type=text], input[type=password] input[type=email]{
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: lightcyan;
+      }
+      
+      input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      
+      /* Overwrite default styles of hr */
+      hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+      }
+      
+      /* Set a style for the submit button */
+      .registerbtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
+      
+      .registerbtn:hover {
+        opacity: 1;
+      }
+      
+      
+    </style>
+</head>
+<body>
+    
+
+<form action="register" method="post">
+    {% csrf_token %}
+    
+ 
+    <div class="container">
+      <h1>Register</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+  
+      <label for="name"><b>Name</b></label>
+      <input type="text" placeholder="Enter Name" name="name" ><br><br>
+
+      <label for="Fathername"><b>Father Name</b></label>
+      <input type="text" placeholder="Enter Father's Name" name="Fathername" ><br><br>
+
+      <label for="collegename"><b>College Name</b></label>
+      <input type="text" placeholder="Enter College Name" name="collegename" ><br><br>
+
+      <label for="collegeid"><b>College id</b></label>
+      <input type="text" placeholder="Enter your collegeid" name="collegeid" ><br><br>
+
+      <label for="mailid"><b>email</b></label>
+      <input type="email" placeholder="Enter mailid" name="mailid" ><br><br>
+  
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" ><br><br>
+  
+      
+      <label for="Department">Choose your departmen:</label>
+      <select id="Department" name="Department">
+      <option value="cse">CSE</option>
+      <option value="ece">ECE</option>
+      <option value="it">IT</option>
+      <option value="mech">MECH</option>
+      <option value="civil">CIVIL</option>
+      
+  </select>
+
+      <hr>
+  
+     
+      <button type="submit" class="registerbtn">Register</button>
+    </div>
+  
+    
+  </form>
+</body>
+</html>
